@@ -5,7 +5,7 @@ In the field of Combinatorics, finding solutions to specific problems is usually
 
 The Exponential Tree Search algorithm was designed through the process of building a domain specific solution to a search problem, and is an example of a domain specific solution to a combinatorial problem. 
 
-This algorithm solves a Coding Challenge, and its usability outside of that domain is not known to me. 
+This algorithm solves a Coding Challenge for Google FooBar, and I dont know much about what its potential applications are. 
 
 # Problem
 This algorithm solves a problem that formally asks for the label of the parent node of a given node in an exponential tree. The labeling description of nodes is based on Post-Order Traversals, where each node is labeled based on the order in which nodes are parsed through PostOrder search. 
