@@ -90,8 +90,8 @@ public class ExponentialTreeSearch {
 
     public void runTest() {
         int Height=31;
-        int[] Test_Values = {32, 15, 6, 13, 1, 20, 4, 1073741823};
-        //Expected Values = :-1, 31, 7, 14, 3, 21, 6, 2147483647:
+        int[] Test_Values = { 15, 6, 13, 1, 20, 4, 1073741823};
+        //Expected Values = : 31, 7, 14, 3, 21, 6, 2147483647:
         int[] Solution = Solve(Height, Test_Values);
         for (int I =0;I<Test_Values.length;I++)
             System.out.println(": "+Test_Values[I]+" --> "+Solution[I]+" :");
