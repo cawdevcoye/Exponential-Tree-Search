@@ -22,9 +22,13 @@ Demonstrates potentially unique process of searching from an origin point and a 
 
 # Details
 Search Criteria : Provided as a parameter -> The node whos parent node must be found. 
+
 Relative Search Coordinate: The updated Search Criteria -Updated while searching-
+
 Value Offset: An offset used to update the Search Criteria
+
 Initial Search Set: This is technically the set of nodes associated with a recursive-left parse of the tree starting at the root node. 
+
 
 Calculate Function:
   It parses the set of nodes defined as the recursive set of left child nodes starting at the root node. This set of nodes is the defined initial search set (Not explicitly represented in the code). This parse process performs a single calculation which represents a search of multiple sets of information. This parse is a base 2 Logarithm, and is performed against the current search value (A base 2 logarithm is used as the recursive-left set of nodes are all based on exponentiation). This calculation (Log2 +1 of current search criteria) yields the root node of a new tree to search for the criteria in. Afterwards the goal state is tested. If the numeric label of the new height variable is not equal to the relative search criteria (which initially is the provided search criteria), then a tree of height=(calculated value) is utilized, and the search criteria is updated through an offset. This offset has the effect of taking the initial/current tree (the tree is also not explicitly represented), and updating the criteria such that the relative location of the original search criteria is maintained in the new tree. This process repeats until the currently tested value (Through the logarithm calculation) is equal to the relative search criteria/coordinate. After that, a formula is used to calculate the solution, which will either be search_criteria +1 or adding an exponent to the search criteria. 
@@ -59,12 +63,14 @@ Avg: O(Log(h)) -> h=3, Val = 2 (Not rightmost leaf and not in initial recursive-
 
 Best: O(1) -> Ex: h=3, Val = 3 (anything in initial recursive-left set)
 
-There is an update to this coming later. It is O(Log(h)) worst case. 
 
 # Final Thoughts
 
 The loop is bounded by h, but has an early cutoff. So the complexity -in this case- isnt always O(h). 
 
+And. 
+
+There is an update to this coming later. It is O(Log(h)) worst case. 
 
 
 Cheers :beer:
