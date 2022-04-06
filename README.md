@@ -11,11 +11,11 @@ Said problem formally asks for the label of the parent node of a given node in a
 # High Level Description
 This solution uses a Double-Ended search algorithm based on searching from a defined start location and a defined goal location in tandem. This script also works by looking through a set of nodes at once, rather than looking at nodes individually. The tandem search process is based on redefining the search criteria while the search is taking place, and uses the deterministic changes made to the search criteria to cast a discovered solution from the redefined criteria back to the original criteria, where the full solution computation can be made. 
 
-The consequences of this solution are as follows: Demonstrates feasility of searching sets of information in time equal to searching a single piece. Demonstrates unique process of searching from an origin point and a specified goal state in tandem. 
+The consequences of this solution are as follows: Demonstrates feasility of searching sets of information in time equal to searching a single piece. Demonstrates unique process of searching from an origin point and a specified goal state in tandem, which is useful for discovering a traversal from a start to an end state. 
 
 # Details
 Calculate Function:
-  It parses the set of nodes defined as the recursive set of left child nodes starting at the root node. This set of nodes is the defined initial search set. 
+  It parses the set of nodes defined as the recursive set of left child nodes starting at the root node. This set of nodes is the defined initial search set. This parse process performes a single calculation which represents a search of multiple sets of information.This parse is a base 2 Logarithm, and is performed against the current search value. The result of that calculation is  
   
 # Numbers
   Height: h
@@ -28,5 +28,7 @@ Calculate Function:
     Starting at root, ending at last left child
     
     left_child_label = ((cur_node_label +1 )/2)-1 
+    Parent_Node_Label = ((cur_node_label + 1)*2)-1
+    For each Node: Recursive Right Child Parse -> Each Recursively parsed node's label is cur_node - 1. So the right-right child of a node in this set is cur_node -1 -1. 
       
     
