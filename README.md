@@ -32,3 +32,4 @@ Calculate Function:
     For each Node: Recursive Right Child Parse -> Each Recursively parsed node's label is cur_node - 1. So the right-right child of a node in this set is cur_node -1 -1. 
       
     
+More To Write Later :D
