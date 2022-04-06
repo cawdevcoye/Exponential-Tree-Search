@@ -21,9 +21,11 @@ Calculate Function:
   Height: h
 # Properties
   Root Node: Root has label 2^(h) -1
+  
   Node_Label: Is some number
+  
   Recusive Left Node Set: 
     Starting at root, ending at last left child:
-      left_child_label = ((cur_node_label +1 )/2)-1 
+    : left_child_label = ((cur_node_label +1 )/2)-1 
       
     
