@@ -53,8 +53,19 @@ Calculate Function:
 
 Calculate Function:
 
-Worst: O(h) -> Ex: h=3, Val = 5 (rightmost leaf of tree)
-Avg: O(Log(h)) -> h=3, Val = 2 (Not rightmost leaf and not in initial recursive-left set)
+Worst: O(h) -> Ex: h=3, Val = 5 (rightmost leaf of tree) 
+
+Avg: O(Log(h)) -> h=3, Val = 2 (Not rightmost leaf and not in initial recursive-left set) 
+
 Best: O(1) -> Ex: h=3, Val = 3 (anything in initial recursive-left set)
 
 There is an update to this coming later. It is O(Log(h)) worst case. 
+
+# Final Thoughts
+
+The loop is bounded by h, but has an early cutoff. So the complexity -in this case- isnt always O(h). 
+
+
+
+Cheers :beer:
+
