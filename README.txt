@@ -22,7 +22,7 @@ A rough description of this process works as follows:
 Initial: Start at a defined initial node set with a defined goal state.
 
 Step 1: Test initial set (utilizing properties to check whole set) and determine if the goal criteria is present. 
---> IF not: A) Update goal state.
+/t--> IF not: A) Update goal state.
             B) Record changes made to search space.
             c) Repeat step 1. 
 --> If So: Goto 2)
