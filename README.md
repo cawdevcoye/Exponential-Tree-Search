@@ -5,20 +5,33 @@ In the field of Combinatorics, finding solutions to specific problems is usually
 
 The Exponential Tree Search algorithm was designed through the process of building a domain specific solution to a search problem, and is an example of a domain specific solution to a combinatorial problem. 
 
-This algorithm solves a Coding Challenge for Google FooBar, and I dont know much about what its potential applications are. 
+This algorithm solves a Coding Challenge for Google FooBar, and is offered as is for any application someone would want.  
 
 # Problem
 This algorithm solves a problem that formally asks for the label of the parent node of a given node in an exponential tree. The labeling description of nodes is based on Post-Order Traversals, where each node is labeled based on the order in which nodes are parsed through PostOrder search. 
-Examples are in the File. 
+Examples are in the file. 
 
 
-# High Level Description
-This solution uses a Double-Ended search algorithm based on searching from a defined start location and a defined goal location in tandem, while also parsing groups of nodes at once using their properties. That process has the effect of looking through a set of nodes at once, rather than looking at nodes individually. The tandem search process is based on redefining the search criteria while the search is taking place. It uses the deterministic changes made to the search criteria -while searching for the criteria- to find a solution. Then, based on the redefined criteria, it casts information gained during this process back to the original criteria where the full solution computation can be made.
-This process works as follows: Start at a defined initial node set with a desired goal state -> Test initial set, check it the goal criteria is present -> IF not: update goal state and repeat | If So: Use information gained to calculate solution.  
+# Solution - General Description
+This solution uses a Double-Ended search algorithm based on searching from a defined start location and a defined goal location in tandem, while updating both the start and goal states in parallel. This script also parses groups of nodes at once rather than singularly, which works via using their properties.
+
+These processes have the effect of speeding up the search process, thus inducing a logarithmic bound into the search algorithm on average, with a best case time complexity of O(1) and worst case O(h). The tandem search process is based on redefining the search criteria while the search is taking place. Thiat process works by searching for a goal state that is relative to the original state, where the new state is called the relative_search_coordinate. For solution computation, the algorithm collects information during the search process, then, based on the redefined criteria, it casts information gained during this process back to the original criteria where the full solution computation can be made.
+
+
+A rough description of this process works as follows: 
+Initial: Start at a defined initial node set with a defined goal state.
+
+Step 1: Test initial set (utilizing properties to check whole set) and determine if the goal criteria is present. 
+--> IF not: A) Update goal state.
+            B) Record changes made to search space.
+            c) Repeat step 1. 
+--> If So: Goto 2)
+Step 2) Use information gained to calculate solution.  
 
 The consequences of this process are as follows: 
 Demonstrates feasibility of searching sets of information in time equal to searching a single piece. 
 Demonstrates potentially unique process of searching from an origin point and a specified goal state in tandem, which is useful for discovering a traversal from a start to an end state. 
+
 
 # Details
 Search Criteria : Provided as a parameter -> The node whos parent node must be found. 
@@ -38,7 +51,7 @@ Calculate Function:
 # Properties
   Root Node: Root has label 2^(h) -1
   
-  Labels: some number
+  Labels: A number between 1 and 2^(h)-1
   
   Recursive Left Node Set: 
     Starting at root, ending at last left child
