@@ -59,7 +59,7 @@ Calculate Function:
 
 Worst: O(h) -> Ex: h=3, Val = 5 (rightmost leaf of tree) 
 
-Avg: O(Log(h)) -> h=3, Val = 2 (Not rightmost leaf and not in initial recursive-left set) 
+Avg: O(Log(h)) -> Ex: h=3, Val = 2 (Not rightmost leaf and not in initial recursive-left set) 
 
 Best: O(1) -> Ex: h=3, Val = 3 (anything in initial recursive-left set)
 
