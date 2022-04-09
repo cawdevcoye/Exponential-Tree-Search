@@ -3,71 +3,43 @@
       /+|Author :              |---/
      /++|  : Chris Williamson  |--/
     /+++|++++++++++++++++++++++|-/
-   _________________________________________________________________________________________________
-    | Basic Info (Original) |                                                                       |
-    |-----------------------------------------------------------------------------------------------|
-    |- A Binary Tree has Nodes expressed as Integers through Post Fix Notation                      |
-    |- The Tree is an Exponentially Sized Binary Tree, where each Node in the Tree has 2 Children.  |
-    |_______________________________________________________________________________________________|
-   _________________________________________________________________________________________________
-    | Input Data (Original) |                                                                       |
-    |-----------------------------------------------------------------------------------------------|
-    |- You will receive as Input a height H, and a List of Numbers.                                 |
-    |- The Set of Numbers correspond to the Locations of Nodes in the Exponential Tree.             |
-    |- The Tree has height h.                                                                       |
-    |_______________________________________________________________________________________________|
-   _________________________________________________________________________________________________
-    | Problem Description (Original) |                                                              |
-    |-----------------------------------------------------------------------------------------------|
-    |- For each of the Values Provided:                                                             |
-    |    : Calculate the Numeric Value of the specified Node's Parent.                              |
-    |    : If the Calculated Value DOES-NOT fall within the Numeric bounds of the Tree, Return -1.  |
-    |_______________________________________________________________________________________________|
-    _______________________
-    |   Height Examples   |
-    |                     |
-    |_____________________|
-    | | |    | Height  2  |
-    |   |    |            |
-    |---|    |____________|
-    | |    TREE           |
-    |   |        3        |
-    | | |       1 2       |
-    |---------------------|
-    | | |    | Height  3  |
-    |   |    |            |
-    |---|    |____________|
-    | |    TREE  7        |
-    |   |      3   6      |
-    | | |     1 2 4 5     |
-    |---------------------|
-    |_____________________|
-  __________________________________________________________________________________________________
-   |Coordinate Examples:     |-Height-|-Value-|-Coordinate-| <<|                                    |
-   |________________________________________________________________________________________________|
-   |------|                                                                                         |
-   |      |H=3, Value = 6 | Representative of the Right Child of the Root Node.                    :|
-   |      |H=3, Value = 2 | Representative of the Right Child of the Left Child of the Root Node.  :|
-   |      |H=2, Value = 1 | Representative of the Left Child of the Root Node.                     :|
-   |      |H=2, Value = 4 | Representative of Nothing -- Not in the tree.                          :|
-   |------|_________________________________________________________________________________________|
-  ___________________________________________________________________________________________________
-   |Proper Answer Examples: |-Height-|-Value-|-Answer-| <<|                                         |
-   |________________________________________________________________________________________________|
-   |------|                                                                                         |
-   |      |H=3, Value = 6 | Answer : 7                                                             :|
-   |      |H=3, Value = 2 | Answer : 3                                                             :|
-   |      |H=2, Value = 1 | Answer : 3                                                             :|
-   |      |H=2, Value = 4 | Answer : -1                                                            :|
-   |      |H=3, Value = 7 | Answer : -1                                                            :|
-   |------|_________________________________________________________________________________________|
-  __________________________________________________________________________________________________
-   | Problem Description (ReLinked/Copied) |                                                        |
-   |------------------------------------------------------------------------------------------------|
-   | For each of the Values Provided:                                                               |
-   |  : Calculate the Numeric Value of the specified Node's Parent.                                 |
-   |  : If the Calculated Value DOES-NOT fall within the Numeric bounds of the Tree, Return -1.     |
-   |________________________________________________________________________________________________|
+    _______________________________________________________________________________________________
+   | Basic Info |                                                                                  |
+   |-----------------------------------------------------------------------------------------------|
+   |- A Binary Tree has Nodes expressed as Integers through Post Fix Notation                      |
+   |- The Tree is an Exponentially Sized Binary Tree, where each Node in the Tree has 2 Children.  |
+   |- For each of the Values Provided:                                                             |
+   |    : Calculate the Numeric Value of the specified Node's Parent.                              |
+   |    : If the Calculated Value DOES-NOT fall within the Numeric bounds of the Tree, Return -1.  |
+   |_______________________________________________________________________________________________|
+    _______________________________________________________________________________________________
+   | Input Data (Original) |                                                                       |
+   |-----------------------------------------------------------------------------------------------|
+   |- You will receive as Input a height H, and a List of Numbers.                                 |
+   |- The Set of Numbers correspond to the Locations of Nodes in the Exponential Tree.             |
+   |- The Tree has height h.                                                                       |
+   |_______________________________________________________________________________________________|
+
+    _______________________________________________________________________________________________
+   |Coordinate Examples:     |-Height-|-Value-|-Coordinate-| <<|                                   |
+   |_______________________________________________________________________________________________|
+   |------|                                                                                        |
+   |      |H=3, Value = 6 | Representative of the Right Child of the Root Node.                    |
+   |      |H=3, Value = 2 | Representative of the Right Child of the Left Child of the Root Node.  |
+   |      |H=2, Value = 1 | Representative of the Left Child of the Root Node.                     |
+   |      |H=2, Value = 4 | Representative of Nothing -- Not in the tree.                          |
+   |------|________________________________________________________________________________________|
+   ________________________________________________________________________________________________
+   |Proper Answer Examples: |-Height-|-Value-|-Answer-| <<|                                        |
+   |_______________________________________________________________________________________________|
+   |------|                                                                                        |
+   |      |H=3, Value = 6 | Answer : 7                                                             |
+   |      |H=3, Value = 2 | Answer : 3                                                             |
+   |      |H=2, Value = 1 | Answer : 3                                                             |
+   |      |H=2, Value = 4 | Answer : -1                                                            |
+   |      |H=3, Value = 7 | Answer : -1                                                            |
+   |------|________________________________________________________________________________________|
+
     ___________________________
    |Solution:   |  |  |  |  |  |
    |            V  V  V  V  V  |
