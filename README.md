@@ -1,7 +1,7 @@
 Author: Chris W
 # Exponential Tree Search
 
-In the field of Combinatorics, finding solutions to specific problems is usually quite complicated. There isnt a single algorithm to find a given solution to an arbitrary combinatorial problem, and as such, finding fast solutions to unique combinatorial problems require domain specific algorithms. In general, these algorithms are based on unique properties associated with a given question, where the process of building a polynomial time algorithm revolves around utilizing those properties and building a solution with them. For particularly tricky problems, the process may require finding novel properties to utilize. 
+When dealing with combinatorial problems, finding solutions to specific questions is usually quite complicated. There isnt a single algorithm to find a given solution to an arbitrary combinatorial problem, and as such, finding fast solutions to unique combinatorial problems require domain specific algorithms. In general, these algorithms are based on unique properties associated with a given question, where the process of building a polynomial time algorithm revolves around utilizing those properties and building a solution with them. For particularly tricky problems, the process may require finding novel properties to utilize. 
 
 The Exponential Tree Search algorithm was designed through the process of building a domain specific solution to a search problem, and is an example of a domain specific solution to a combinatorial problem. 
 
@@ -13,9 +13,9 @@ Examples are in the file.
 
 
 # Solution - General Description
-This solution uses a Double-Ended search algorithm based on searching from a defined start location and a defined goal location in tandem, while updating both the start and goal states in parallel. This script also parses groups of nodes at once rather than singularly, which works via using their properties.
+This solution uses a Double-Ended search algorithm based on searching from a defined start location and a defined goal location in tandem, while updating both the start and goal states in parallel. This script also parses groups of nodes at once rather than singularly, which works via using a logarithm.
 
-These processes have the effect of speeding up the search process, thus inducing a logarithmic bound into the search algorithm on average, with a best case time complexity of O(1) and worst case O(h). The tandem search process is based on redefining the search criteria while the search is taking place. Thiat process works by searching for a goal state that is relative to the original state, where the new state is called the relative_search_coordinate. For solution computation, the algorithm collects information during the search process, then, based on the redefined criteria, it casts information gained during this process back to the original criteria where the full solution computation can be made.
+These processes have the effect of speeding up the search process, thus inducing a logarithmic bound into the search algorithm on average, with a best case time complexity of O(1) and worst case O(h). The tandem search process is based on redefining the search criteria while the search is taking place. That process works by searching for a goal state that is relative to the original state, where the new state is called the relative_search_coordinate. For solution computation, the algorithm collects information during the search process, then, based on the redefined criteria, it casts information gained during this process back to the original criteria where the full solution computation can be made.
 
 
 A rough description of this process works as follows: 
@@ -44,7 +44,7 @@ Initial Search Set: This is technically the set of nodes associated with a recur
 
 
 Calculate Function:
-  It parses the set of nodes defined as the recursive set of left child nodes starting at the root node. This set of nodes is the defined initial search set (Not explicitly represented in the code). This parse process performs a single calculation which represents a search of multiple sets of information. This parse is a base 2 Logarithm, and is performed against the current search value (A base 2 logarithm is used as the recursive-left set of nodes are all based on exponentiation). This calculation (Log2 +1 of current search criteria) yields the root node of a new tree to search for the criteria in. Afterwards the goal state is tested. If the numeric label of the new height variable is not equal to the relative search criteria (which initially is the provided search criteria), then a tree of height=(calculated value) is utilized, and the search criteria is updated through an offset. This offset has the effect of taking the initial/current tree (the tree is also not explicitly represented), and updating the criteria such that the relative location of the original search criteria is maintained in the new tree. This process repeats until the currently tested value (Through the logarithm calculation) is equal to the relative search criteria/coordinate. After that, a formula is used to calculate the solution, which will either be search_criteria +1 or adding an exponent to the search criteria. 
+  It parses the set of nodes defined as the recursive set of left child nodes starting at the root node. This set of nodes is the defined initial search set (Not explicitly represented in the code). This parse process performs a single calculation which represents a search of multiple pieces of information. This parse uses a base 2 Logarithm, and is performed against the current search value (A base 2 logarithm is used as the recursive-left set of nodes are all based on exponentiation). This calculation (Log2 +1 of current search criteria) yields the root node of a new tree to search for the criteria in. Afterwards the goal state is tested. If the numeric label of the new height variable is not equal to the relative search criteria (which initially is the provided search criteria), then a tree of height=(calculated value) is utilized, and the search criteria is updated through an offset. This offset has the effect of taking the initial/current tree (the tree is also not explicitly represented), and updating the criteria such that the relative location of the original search criteria is maintained in the new tree. This process repeats until the currently tested value (Through the logarithm calculation) is equal to the relative search criteria/coordinate. After that, a formula is used to calculate the solution, which will either be search_criteria +1 or adding a power of two to the search criteria. 
   
 # Numbers
   Height: h (Utilized as number of Layers, not 0 indexed Height)
@@ -86,5 +86,5 @@ And.
 There is an update to this coming later. It is O(Log(h)) worst case. 
 
 
-Cheers :beer:
+Cheers 
 
